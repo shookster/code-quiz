@@ -1,13 +1,16 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 11vw;
-    height: 11vh;
-    justify-content; center;
-    align-items: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
