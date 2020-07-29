@@ -14,7 +14,7 @@ nextButton.addEventListener("click", () => {
 });
 
 //timer function to start on click
-var timeEl = document.querySelector(".time");
+var timeEl = document.querySelector("timer");
 var mainEl = document.getElementById("main");
 
 var secondsLeft = 10;
