@@ -22,7 +22,7 @@ var secondsLeft = 10;
 function setTime() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+    timeEl.textContent = " Quiz starts in:" + secondsLeft;
 
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
@@ -30,6 +30,12 @@ function setTime() {
     }
   }, 1000);
 }
+
+function sendMessage() {
+  timeEl.textContent = " Begin! ";
+}
+
+setTime();
 
 function startGame() {
   console.log("Started");
