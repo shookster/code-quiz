@@ -8,17 +8,14 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 
 let shuffledQuestions, currentQuestionIndex;
 
-//event listeners for clicks
-
-//timer variables and function. currently starts when page loads. FIX
+//timer variables and function.
 // variables
 var timeEl = document.querySelector(".timer");
 var mainEl = document.getElementById("main");
 
-// number of seconds timer starts at
-
-//actual countdown fuction
+//countdown fuction
 startButton.onclick = function () {
+  //number of seconds timer starts at
   var secondsLeft = 10;
   var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -31,7 +28,7 @@ startButton.onclick = function () {
   }, 1000);
 };
 
-//in the activity from class, this was the "colorsplosion" that triggered when countdown reached zero
+//DELETE THIS? in the activity from class, this was the "colorsplosion" that triggered when countdown reached zero. currently does nothing.
 function sendMessage() {
   timeEl.textContent = " Begin ";
 
