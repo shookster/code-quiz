@@ -1,3 +1,4 @@
+// variables
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 
@@ -7,42 +8,46 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 
 let shuffledQuestions, currentQuestionIndex;
 
-startButton.addEventListener("click", startTimer);
-nextButton.addEventListener("click", () => {
-  currentQuestionIndex++;
-  setNextQuestion();
-});
+//event listeners for clicks
 
-//timer function to start on click
-var timeEl = document.querySelector("timer");
+//timer variables and function. currently starts when page loads. FIX
+// variables
+var timeEl = document.querySelector(".timer");
 var mainEl = document.getElementById("main");
 
-var secondsLeft = 10;
+// number of seconds timer starts at
 
-function setTime() {
+//actual countdown fuction
+startButton.onclick = function () {
+  var secondsLeft = 10;
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    timeEl.textContent = " Quiz starts in:" + secondsLeft;
+    timeEl.textContent = secondsLeft + " seconds until start.";
 
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
-      sendMessage();
+      startGame();
     }
   }, 1000);
-}
+};
 
+//in the activity from class, this was the "colorsplosion" that triggered when countdown reached zero
 function sendMessage() {
-  timeEl.textContent = " Begin! ";
+  timeEl.textContent = " Begin ";
+
+  var imgEl = document.createElement("h1");
+
+  imgEl.setAttribute("Begin");
+  mainEl.appendChild(imgEl);
 }
 
-setTime();
-
+//back to quiz code
 function startGame() {
   console.log("Started");
   startButton.classList.add("hide");
-  shuffledQuestions = questions.sort(() => Math.drandom() - 0.5);
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
-  questionContainerElemnent.classList.remove("hide");
+  questionContainerElement.classList.remove("hide");
   setNextQuestion();
 }
 
@@ -102,6 +107,34 @@ function clearStatusClass(element) {
 }
 
 const questions = [
+  {
+    question: "How old is the earth?",
+    answers: [
+      { text: "4 billion", correct: true },
+      { text: "4 million", correct: false },
+    ],
+  },
+  {
+    question: "How old is the earth?",
+    answers: [
+      { text: "4 billion", correct: true },
+      { text: "4 million", correct: false },
+    ],
+  },
+  {
+    question: "How old is the earth?",
+    answers: [
+      { text: "4 billion", correct: true },
+      { text: "4 million", correct: false },
+    ],
+  },
+  {
+    question: "How old is the earth?",
+    answers: [
+      { text: "4 billion", correct: true },
+      { text: "4 million", correct: false },
+    ],
+  },
   {
     question: "How old is the earth?",
     answers: [
